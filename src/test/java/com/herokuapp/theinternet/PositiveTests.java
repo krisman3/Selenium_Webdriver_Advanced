@@ -1,35 +1,29 @@
 package com.herokuapp.theinternet;
 
-import com.google.gson.annotations.Until;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
-import java.time.Duration;
 
 public class PositiveTests extends BaseClass {
 
+    @Parameters({"browser"})
     @BeforeTest
-    public void setUpTest()
+    public void setUpTest(String browser)
     {
-        setUp();
+
+        setUp(browser);
     }
 
     @AfterTest
-    public void tearDownTest()
-    {
-        tearDown();
+    public void tearDownTest() {
+        driver.quit();
     }
 
 
