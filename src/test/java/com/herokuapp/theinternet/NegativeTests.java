@@ -68,8 +68,8 @@ public class NegativeTests extends BaseClass
 
     }
 
-    @Test
-    public void incorrectPasswordTest()
+    @Test(dataProvider = "userDataProvider", dataProviderClass = MyDataProviders.class)
+    public void incorrectPasswordTest(String passwords)
     {
         System.out.println("Test started!");
 
@@ -92,14 +92,14 @@ public class NegativeTests extends BaseClass
         WebElement username = driver.findElement(By.id("username"));
         wait.until(ExpectedConditions.elementToBeClickable(username));
         username.click();
-        username.sendKeys("1");
+        username.sendKeys("tomsmith");
 
 
         // Enter password
         WebElement password = driver.findElement(By.id("password"));
         wait.until(ExpectedConditions.elementToBeClickable(password));
         password.click();
-        password.sendKeys("SuperSecretPassword!");
+        password.sendKeys(passwords);
 
 
         // Click Login button
@@ -109,8 +109,10 @@ public class NegativeTests extends BaseClass
 
         WebElement invalid_username = driver.findElement(By.xpath("//div[@class='flash error']"));
         String text_invalid_usr = invalid_username.getText();
-        Assert.assertEquals(text_invalid_usr, "Your username is invalid!\n×");
+        Assert.assertEquals(text_invalid_usr, "Your password is invalid!\n×");
     }
+
+
 
 
 }
