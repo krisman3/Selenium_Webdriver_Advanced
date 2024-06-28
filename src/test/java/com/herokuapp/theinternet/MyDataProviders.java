@@ -14,4 +14,16 @@ public class MyDataProviders
                         {"asdbsas"}
                 };
     }
+
+    @DataProvider(name = "incorrectUserDataProvider")
+    public static Object[][] incorrectUserDataProvider()
+    {
+        return new Object[][]
+                {
+                        {"user1"},
+                        {""},
+                        {"1235"},
+                        {"..//-"}
+                };
+    }
 }

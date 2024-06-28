@@ -24,10 +24,10 @@ public class NegativeTests extends BaseClass
     /**
      * Putting an incorrect username and correct password
      */
-    @Test
-    public void incorrectUsernameTest()
+    @Test(dataProvider = "incorrectUserDataProvider", dataProviderClass = MyDataProviders.class)
+    public void incorrectUsernameTest(String usernames)
     {
-        System.out.println("Test started!");
+        System.out.println("Incorrect username test started!");
 
         String BASE_URL = "https://the-internet.herokuapp.com/login";
         String EXP_URL = "https://the-internet.herokuapp.com/secure";
@@ -36,7 +36,6 @@ public class NegativeTests extends BaseClass
         driver.get(BASE_URL);
 
         driver.manage().window().maximize();
-        System.out.println("Page is opened!");
 
         // Check if we're on the correct page
         String curr_page = driver.getCurrentUrl();
@@ -47,7 +46,7 @@ public class NegativeTests extends BaseClass
         WebElement username = driver.findElement(By.id("username"));
         wait.until(ExpectedConditions.elementToBeClickable(username));
         username.click();
-        username.sendKeys("1");
+        username.sendKeys(usernames);
 
 
         // Enter password
@@ -65,13 +64,13 @@ public class NegativeTests extends BaseClass
         WebElement invalid_username = driver.findElement(By.xpath("//div[@class='flash error']"));
         String text_invalid_usr = invalid_username.getText();
         Assert.assertEquals(text_invalid_usr, "Your username is invalid!\n×");
-
+        System.out.println("Incorrect username test ended!");
     }
 
     @Test(dataProvider = "incorrectPassDataProvider", dataProviderClass = MyDataProviders.class)
     public void incorrectPasswordTest(String passwords)
     {
-        System.out.println("Test started!");
+        System.out.println("Incorrect password test started!");
 
         String BASE_URL = "https://the-internet.herokuapp.com/login";
         String EXP_URL = "https://the-internet.herokuapp.com/secure";
@@ -80,7 +79,6 @@ public class NegativeTests extends BaseClass
         driver.get(BASE_URL);
 
         driver.manage().window().maximize();
-        System.out.println("Page is opened!");
 
 
         // Check if we're on the correct page
@@ -110,6 +108,7 @@ public class NegativeTests extends BaseClass
         WebElement invalid_username = driver.findElement(By.xpath("//div[@class='flash error']"));
         String text_invalid_usr = invalid_username.getText();
         Assert.assertEquals(text_invalid_usr, "Your password is invalid!\n×");
+        System.out.println("Incorrect password test ended!");
     }
 
 
