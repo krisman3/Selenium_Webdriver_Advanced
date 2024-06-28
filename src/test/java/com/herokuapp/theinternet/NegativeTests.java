@@ -30,7 +30,6 @@ public class NegativeTests extends BaseClass
         System.out.println("Incorrect username test started!");
 
         String BASE_URL = "https://the-internet.herokuapp.com/login";
-        String EXP_URL = "https://the-internet.herokuapp.com/secure";
 
         // Open test page
         driver.get(BASE_URL);
@@ -73,7 +72,7 @@ public class NegativeTests extends BaseClass
         System.out.println("Incorrect password test started!");
 
         String BASE_URL = "https://the-internet.herokuapp.com/login";
-        String EXP_URL = "https://the-internet.herokuapp.com/secure";
+
 
         // Open test page
         driver.get(BASE_URL);
