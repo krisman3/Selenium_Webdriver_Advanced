@@ -36,7 +36,7 @@ public class NegativeTests
     /**
      * Putting an incorrect username and correct password
      */
-    @Test(dataProvider = "incorrectUserDataProvider", dataProviderClass = MyDataProviders.class)
+    @Test(dataProvider = "incorrectUserDataProvider", dataProviderClass = MyDataProviders.class, priority = 1)
     public void incorrectUsernameTest(String usernames)
     {
         System.out.println("Incorrect username test started!");
@@ -78,7 +78,7 @@ public class NegativeTests
         System.out.println("Incorrect username test ended!");
     }
 
-    @Test(dataProvider = "incorrectPassDataProvider", dataProviderClass = MyDataProviders.class)
+    @Test(dataProvider = "incorrectPassDataProvider", dataProviderClass = MyDataProviders.class, priority = 2)
     public void incorrectPasswordTest(String passwords)
     {
         System.out.println("Incorrect password test started!");
