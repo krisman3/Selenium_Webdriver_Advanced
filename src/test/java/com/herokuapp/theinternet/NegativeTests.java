@@ -1,24 +1,36 @@
 package com.herokuapp.theinternet;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class NegativeTests extends BaseClass
+import java.time.Duration;
+
+public class NegativeTests
 {
+    WebDriver driver;
+    WebDriverWait wait;
+
     @BeforeTest
     public void setUpTest()
     {
-        setUp();
+//           System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver.exe");
+        WebDriverManager.edgedriver().setup();
+        driver = new EdgeDriver();
+        wait = new WebDriverWait(driver, Duration.ofSeconds(1));
     }
 
     @AfterTest
     public void tearDownTest() {
-        tearDown();
+        driver.quit();
     }
 
     /**

@@ -8,18 +8,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class BaseClass {
-    /**
-     * Stop execution for the given amount of time.
-     *
-     * @param seconds
-     */
-    private void sleep(int seconds) {
-        try {
-            Thread.sleep(seconds * 100);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
 
     protected WebDriver driver;
     protected WebDriverWait wait;
@@ -29,7 +17,7 @@ public class BaseClass {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(1));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(3));
     }
 
     public void tearDown()
