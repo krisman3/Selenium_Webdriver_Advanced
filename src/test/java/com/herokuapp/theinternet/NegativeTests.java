@@ -68,7 +68,7 @@ public class NegativeTests extends BaseClass
 
     }
 
-    @Test(dataProvider = "userDataProvider", dataProviderClass = MyDataProviders.class)
+    @Test(dataProvider = "incorrectPassDataProvider", dataProviderClass = MyDataProviders.class)
     public void incorrectPasswordTest(String passwords)
     {
         System.out.println("Test started!");

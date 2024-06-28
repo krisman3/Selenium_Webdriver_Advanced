@@ -4,8 +4,8 @@ import org.testng.annotations.DataProvider;
 
 public class MyDataProviders
 {
-    @DataProvider(name = "userDataProvider")
-    public static Object[][] userDataProvider()
+    @DataProvider(name = "incorrectPassDataProvider")
+    public static Object[][] incorrectPassDataProvider()
     {
         return new Object[][]
                 {
