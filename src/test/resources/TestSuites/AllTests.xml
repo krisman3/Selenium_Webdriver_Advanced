@@ -15,4 +15,10 @@
             <class name="com.herokuapp.theinternet.NegativeTests"/>
         </classes>
     </test>
+    <test name="AddRemoveElements" >
+        <classes>
+            <class name="com.herokuapp.theinternet.AddRemoveElements"/>
+        </classes>
+    </test>
+
 </suite>
