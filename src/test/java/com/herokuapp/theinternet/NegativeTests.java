@@ -17,7 +17,7 @@ public class NegativeTests extends BaseClass
     public void setUpTest(String browser)
     {
 
-        setUp(browser);
+        setUp(browser, true);
     }
 
     @AfterTest
@@ -37,7 +37,7 @@ public class NegativeTests extends BaseClass
         // Open test page
         driver.get(BASE_URL);
 
-        driver.manage().window().maximize();
+//        driver.manage().window().maximize();
 
         // Check if we're on the correct page
         String curr_page = driver.getCurrentUrl();
@@ -77,7 +77,7 @@ public class NegativeTests extends BaseClass
         // Open test page
         driver.get(BASE_URL);
 
-        driver.manage().window().maximize();
+//        driver.manage().window().maximize();
 
 
         // Check if we're on the correct page

@@ -18,7 +18,7 @@ public class PositiveTests extends BaseClass {
     public void setUpTest(String browser)
     {
 
-        setUp(browser);
+        setUp(browser, true);
     }
 
     @AfterTest
@@ -40,7 +40,7 @@ public class PositiveTests extends BaseClass {
         // Open test page
         driver.get(BASE_URL);
 
-        driver.manage().window().maximize();
+//        driver.manage().window().maximize();
 
         // Enter username
         WebElement username = driver.findElement(By.id("username"));

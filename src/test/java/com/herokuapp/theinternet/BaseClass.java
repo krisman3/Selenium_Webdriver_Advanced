@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Parameters;
 
@@ -15,23 +16,34 @@ public class BaseClass {
     protected WebDriver driver;
     protected WebDriverWait wait;
 
-    @Parameters({"browser"})
-    public void setUp(String browser)
+    @Parameters({"browser", "headless"})
+    public void setUp(String browser, boolean headless)
     {
         switch (browser)
         {
             case "chrome":
-                ChromeOptions options = new ChromeOptions();
-                options.addArguments("--headless=new");
+                ChromeOptions chromeOptions = new ChromeOptions();
+                if(headless)
+                {
+                    chromeOptions.addArguments("headless");
+                    chromeOptions.addArguments("disable-gpu");
+                }
+
                 WebDriverManager.chromedriver().setup();
-                driver = new ChromeDriver();
+                driver = new ChromeDriver(chromeOptions);
+
                 break;
             case "edge":
+                EdgeOptions edgeOptions = new EdgeOptions();
+                if(headless)
+                {
+                    edgeOptions.addArguments("headless");
+                    edgeOptions.addArguments("disable-gpu");
+                }
                 WebDriverManager.edgedriver().setup();
-                ChromeOptions options = new ChromeOptions();
-                options.addArguments("--headless=new");
+//                options.addArguments("--headless=new");
 
-                driver = new EdgeDriver();
+                driver = new EdgeDriver(edgeOptions);
                 break;
 
             default:

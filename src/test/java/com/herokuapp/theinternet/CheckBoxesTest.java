@@ -10,13 +10,13 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class CheckBoxes extends BaseClass {
+public class CheckBoxesTest extends BaseClass {
 
    @BeforeTest
     public void setUpTest()
     {
 
-        setUp("chrome");
+        setUp("chrome", true);
     }
 
     @AfterTest

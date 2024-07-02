@@ -10,12 +10,12 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class AddRemoveElements extends BaseClass
+public class AddRemoveElementsTests extends BaseClass
 {
     @BeforeTest
     public void setUpTest()
     {
-        setUp("chrome");
+        setUp("chrome", true);
     }
     @AfterTest
     public void tearDownTest()
