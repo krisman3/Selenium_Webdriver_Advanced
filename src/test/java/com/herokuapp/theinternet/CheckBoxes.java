@@ -42,15 +42,10 @@ public class CheckBoxes extends BaseClass {
         System.out.println("Current number of checked boxes: " + checked_boxes.size());
 
         // Locate both checkboxes
-//        List<WebElement> box_list = driver.findElements(By.cssSelector("#checkboxes > input[type=checkbox]"));
-//        for (WebElement element : box_list)
-//        {
-//            System.out.println(element.getText());
-//        }
-        WebElement box1 = driver.findElement(By.cssSelector("#checkboxes > input[type=checkbox]"));
-        String box1_text = box1.getText();
-        System.out.println(box1_text);
-//        Assert.assertEquals(box1_text, " checkbox 1", "Checkbox 1 is not present.");
+
+        WebElement box1 = driver.findElement(By.xpath("//*[@id='checkboxes']/input[1]"));
+        box1.click();
+        Assert.assertTrue(box1.isSelected(), "The checkbox is not selected.");
 
         // Click on checkbox 1
 
