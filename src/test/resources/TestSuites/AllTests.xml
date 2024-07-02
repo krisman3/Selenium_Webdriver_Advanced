@@ -12,6 +12,7 @@
 
     <test name="NegativeTests">
         <parameter name="browser" value="edge" />
+        <parameter name="headless" value="true" />
         <classes>
             <class name="com.herokuapp.theinternet.NegativeTests"/>
         </classes>
@@ -23,6 +24,7 @@
     </test>
     <test name="CheckBoxes">
         <parameter name="browser" value="edge" />
+        <parameter name="headless" value="true" />
         <classes>
             <class name="com.herokuapp.theinternet.CheckBoxesTest"/>
         </classes>

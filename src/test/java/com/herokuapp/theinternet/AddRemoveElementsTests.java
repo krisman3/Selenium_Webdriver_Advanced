@@ -1,5 +1,6 @@
 package com.herokuapp.theinternet;
 
+import com.herokuapp.theinternet.pages.PagesNames;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -27,7 +28,7 @@ public class AddRemoveElementsTests extends BaseClass
     @Test
     public void addElement()
     {
-        driver.get("https://the-internet.herokuapp.com/add_remove_elements/");
+        driver.get(PagesNames.ADD_REMOVE_PAGE);
         String curr_url = driver.getCurrentUrl();
         Assert.assertEquals(curr_url, "https://the-internet.herokuapp.com/add_remove_elements/", "Incorrect URL." );
 
