@@ -35,18 +35,12 @@ public class PositiveTests extends BaseClass {
         String EXP_URL = "https://the-internet.herokuapp.com/secure";
 
 
-
         PageFactory.initElements(driver, this);
-
-        System.out.println("Browser started!");
-
 
         // Open test page
         driver.get(BASE_URL);
 
         driver.manage().window().maximize();
-        System.out.println("Page is opened!");
-
 
         // Enter username
         WebElement username = driver.findElement(By.id("username"));
@@ -66,15 +60,12 @@ public class PositiveTests extends BaseClass {
         WebElement login_button = driver.findElement(By.cssSelector("#login > button > i"));
         login_button.click();
 
-        System.out.println("Verifying new page URL.");
         // Verifications
         wait.until(ExpectedConditions.urlToBe(EXP_URL));
 
         String act_url = driver.getCurrentUrl();
         Assert.assertEquals(act_url, EXP_URL, "The URLs don't match!");
 
-
-        System.out.println("Verifying that we're on the right page");
 
         // Check for the green message!
         WebElement logged_message = driver.findElement(By.cssSelector("#flash"));
@@ -98,7 +89,6 @@ public class PositiveTests extends BaseClass {
         // Finish
         driver.manage().window().minimize();
         driver.close();
-        System.out.println("Test finished!");
     }
 
 }

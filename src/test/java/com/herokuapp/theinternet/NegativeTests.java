@@ -31,7 +31,6 @@ public class NegativeTests extends BaseClass
     @Test(dataProvider = "incorrectUserDataProvider", dataProviderClass = MyDataProviders.class, priority = 1)
     public void incorrectUsernameTest(String usernames)
     {
-        System.out.println("Incorrect username test started!");
 
         String BASE_URL = "https://the-internet.herokuapp.com/login";
 
@@ -67,14 +66,11 @@ public class NegativeTests extends BaseClass
         WebElement invalid_username = driver.findElement(By.xpath("//div[@class='flash error']"));
         String text_invalid_usr = invalid_username.getText();
         Assert.assertEquals(text_invalid_usr, "Your username is invalid!\n×");
-        System.out.println("Incorrect username test ended!");
     }
 
     @Test(dataProvider = "incorrectPassDataProvider", dataProviderClass = MyDataProviders.class, priority = 2)
     public void incorrectPasswordTest(String passwords)
     {
-        System.out.println("Incorrect password test started!");
-
         String BASE_URL = "https://the-internet.herokuapp.com/login";
 
 
@@ -111,7 +107,6 @@ public class NegativeTests extends BaseClass
         WebElement invalid_username = driver.findElement(By.xpath("//div[@class='flash error']"));
         String text_invalid_usr = invalid_username.getText();
         Assert.assertEquals(text_invalid_usr, "Your password is invalid!\n×");
-        System.out.println("Incorrect password test ended!");
     }
 
 
