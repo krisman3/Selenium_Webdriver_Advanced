@@ -45,6 +45,7 @@ public class DragNDropTest extends BaseClass{
         String boxB_text = boxB_header.getText();
         Assert.assertEquals(boxB_text, "B");
 
+        // Drag and drop box A into box B
         action.dragAndDrop(boxA, boxB);
 
 
