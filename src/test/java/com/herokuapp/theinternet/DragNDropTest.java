@@ -48,7 +48,6 @@ public class DragNDropTest extends BaseClass{
         // Alternative way to do this:
 //        action.clickAndHold(boxA).moveToElement(boxB).release().perform();
 
-
         // Check the new header texts
         WebElement boxA_header_new = driver.findElement(By.cssSelector("#column-a > header"));
         String boxA_text_new = boxA_header_new.getText();
