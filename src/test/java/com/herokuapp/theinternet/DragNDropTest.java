@@ -3,14 +3,11 @@ package com.herokuapp.theinternet;
 import com.herokuapp.theinternet.pages.PagesNames;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.devtools.v85.page.Page;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
-import java.util.Objects;
 
 public class DragNDropTest extends BaseClass{
 
@@ -46,7 +43,21 @@ public class DragNDropTest extends BaseClass{
         Assert.assertEquals(boxB_text, "B");
 
         // Drag and drop box A into box B
-        action.dragAndDrop(boxA, boxB);
+
+        action.dragAndDrop(boxA, boxB).perform();
+        // Alternative way to do this:
+//        action.clickAndHold(boxA).moveToElement(boxB).release().perform();
+
+
+        // Check the new header texts
+        WebElement boxA_header_new = driver.findElement(By.cssSelector("#column-a > header"));
+        String boxA_text_new = boxA_header_new.getText();
+        WebElement boxB_header_new = driver.findElement(By.cssSelector("#column-b > header"));
+        String boxB_text_new = boxB_header_new.getText();
+
+        // Confirm that column A now contains boxB
+        Assert.assertEquals(boxA_text_new, "B", "Column A content incorrect.");
+        Assert.assertEquals(boxB_text_new, "A", "Column A content incorrect.");
 
 
     }
