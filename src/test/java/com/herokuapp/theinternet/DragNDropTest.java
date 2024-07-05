@@ -58,6 +58,11 @@ public class DragNDropTest extends BaseClass{
         Assert.assertEquals(boxA_text_new, "B", "Column A content incorrect.");
         Assert.assertEquals(boxB_text_new, "A", "Column A content incorrect.");
 
+        // Do the opposite movement
+        action.dragAndDrop(boxB, boxA).perform();
+        Assert.assertEquals(boxA_text_new, "A", "Column A content incorrect.");
+        Assert.assertEquals(boxB_text_new, "B", "Column A content incorrect.");
+
 
     }
 }
