@@ -1,7 +1,11 @@
 package com.herokuapp.theinternet.tests;
 
+import com.herokuapp.theinternet.pages.PagesNames;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 public class InputsTest extends BaseClass{
 
@@ -16,17 +20,23 @@ public class InputsTest extends BaseClass{
     }
 
 
-    // Grab the page
+    @Test
+    public void inputTestUp(){
 
-    // Click on the number input field
+        // Grab the page
+        driver.get(PagesNames.INPUTS_PAGE);
 
-    // Type a number (e.g. 236)
+        // Click on the number input field
+        WebElement input_field = driver.findElement(By.cssSelector("div > input[type='number']"));
+        // Type a number (e.g. 236)
 
-    // Find the button UP
+        // Find the button UP
 
-    // Click it
+        // Click it
 
-    // Verify that the number input is increased by one
+        // Verify that the number input is increased by one
+    }
+
 
     // Find the button DOWN
 
