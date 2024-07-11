@@ -20,5 +20,5 @@ public class InputsTest extends BaseClass{
 
     // Click on the number input field
 
-    // Type a number (etc 236)
+    // Type a number (e.g. 236)
 }
