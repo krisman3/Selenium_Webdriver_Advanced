@@ -28,6 +28,7 @@ public class InputsTest extends BaseClass{
 
         // Click on the number input field
         WebElement input_field = driver.findElement(By.cssSelector("div > input[type='number']"));
+
         // Type a number (e.g. 236)
 
         // Find the button UP
