@@ -1,4 +1,4 @@
-package com.herokuapp.theinternet;
+package com.herokuapp.theinternet.tests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;

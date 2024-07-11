@@ -1,4 +1,4 @@
-package com.herokuapp.theinternet;
+package com.herokuapp.theinternet.tests;
 
 import com.herokuapp.theinternet.pages.PagesNames;
 import org.openqa.selenium.By;

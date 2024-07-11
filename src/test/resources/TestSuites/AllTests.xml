@@ -6,7 +6,7 @@
         <parameter name="browser" value="chrome" />
         <parameter name="headless" value="true" />
         <classes>
-            <class name="com.herokuapp.theinternet.PositiveTests"/>
+            <class name="com.herokuapp.theinternet.tests.PositiveTests"/>
         </classes>
     </test>
 
@@ -14,19 +14,19 @@
         <parameter name="browser" value="edge" />
         <parameter name="headless" value="true" />
         <classes>
-            <class name="com.herokuapp.theinternet.NegativeTests"/>
+            <class name="com.herokuapp.theinternet.tests.NegativeTests"/>
         </classes>
     </test>
     <test name="AddRemoveElements" >
         <classes>
-            <class name="com.herokuapp.theinternet.AddRemoveElementsTests"/>
+            <class name="com.herokuapp.theinternet.tests.AddRemoveElementsTests"/>
         </classes>
     </test>
     <test name="CheckBoxes">
         <parameter name="browser" value="edge" />
         <parameter name="headless" value="true" />
         <classes>
-            <class name="com.herokuapp.theinternet.CheckBoxesTest"/>
+            <class name="com.herokuapp.theinternet.tests.CheckBoxesTest"/>
         </classes>
     </test>
 

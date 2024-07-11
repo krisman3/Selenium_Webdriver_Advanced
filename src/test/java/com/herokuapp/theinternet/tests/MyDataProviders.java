@@ -1,4 +1,4 @@
-package com.herokuapp.theinternet;
+package com.herokuapp.theinternet.tests;
 
 import org.testng.annotations.DataProvider;
 
