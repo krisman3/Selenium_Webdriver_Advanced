@@ -9,24 +9,21 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class DragNDropTest extends BaseClass{
+public class DragNDropTest extends BaseClass {
 
 
     @BeforeTest
-    public void setUpTest()
-    {
+    public void setUpTest() {
         setUp("chrome", false);
     }
 
     @AfterTest
-    public void tearDownTest()
-    {
+    public void tearDownTest() {
         tearDown();
     }
 
     @Test
-    public void DragNDropTests()
-    {
+    public void DragNDropTests() {
         Actions action = new Actions(driver);
         driver.get(PagesNames.DRAG_PAGE);
 
@@ -62,7 +59,5 @@ public class DragNDropTest extends BaseClass{
         action.dragAndDrop(boxB, boxA).perform();
         Assert.assertEquals(boxA_text_new, "A", "Column A content incorrect.");
         Assert.assertEquals(boxB_text_new, "B", "Column A content incorrect.");
-
-
     }
 }
