@@ -6,4 +6,5 @@ public class PagesNames  {
     public static final String ADD_REMOVE_PAGE = BASE_PAGE + "add_remove_elements/";
     public static final String INPUTS_PAGE = BASE_PAGE + "inputs";
     public static final String HOVER_PAGE = BASE_PAGE + "/hover";
+    public static final String CHECKBOX_PAGE = BASE_PAGE + "/checkboxes";
 }
