@@ -6,17 +6,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class PositiveLoginTests extends BaseClass {
 
-    @Parameters({"browser"})
+    @Parameters({"browser", "headless"})
     @BeforeTest
-    public void setUpTest(String browser) {
-        setUp(browser, true);
+    public void setUpTest(@Optional("edge") String browser, @Optional("false") String headless) {
+        setUp(browser, Boolean.parseBoolean(headless));
     }
 
     @AfterTest
