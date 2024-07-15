@@ -9,9 +9,9 @@
             <class name="com.herokuapp.theinternet.tests.PositiveTests"/>
         </classes>
     </test>
-    <test name="InputsTest" enabled="false">
+    <test name="InputsTest">
         <classes>
-            <class name="com.herokuapp.theinternet.tests.InputsTestNOTWORKING"/>
+            <class name="com.herokuapp.theinternet.tests.InputTests"/>
         </classes>
     </test>
     <test name="NegativeTests">
