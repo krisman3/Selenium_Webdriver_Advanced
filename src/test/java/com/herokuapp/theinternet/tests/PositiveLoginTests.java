@@ -11,7 +11,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class PositiveTests extends BaseClass {
+public class PositiveLoginTests extends BaseClass {
 
     @Parameters({"browser"})
     @BeforeTest
@@ -23,7 +23,7 @@ public class PositiveTests extends BaseClass {
 
     @AfterTest
     public void tearDownTest() {
-        driver.quit();
+        tearDown();
     }
 
 

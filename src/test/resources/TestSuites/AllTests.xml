@@ -6,7 +6,7 @@
         <parameter name="browser" value="chrome" />
         <parameter name="headless" value="true" />
         <classes>
-            <class name="com.herokuapp.theinternet.tests.PositiveTests"/>
+            <class name="com.herokuapp.theinternet.tests.PositiveLoginTests"/>
         </classes>
     </test>
     <test name="InputsTest">
@@ -18,7 +18,7 @@
         <parameter name="browser" value="edge" />
         <parameter name="headless" value="true" />
         <classes>
-            <class name="com.herokuapp.theinternet.tests.NegativeTests"/>
+            <class name="com.herokuapp.theinternet.tests.NegativeLoginTests"/>
         </classes>
     </test>
     <test name="AddRemoveElements" >

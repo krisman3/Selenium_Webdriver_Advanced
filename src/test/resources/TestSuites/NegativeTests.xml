@@ -4,7 +4,7 @@
 <suite name="AllTests" verbose="1">
     <test name="NegativeTests">
         <classes>
-            <class name="com.herokuapp.theinternet.tests.NegativeTests"/>
+            <class name="com.herokuapp.theinternet.tests.NegativeLoginTests"/>
         </classes>
     </test>
 </suite>
