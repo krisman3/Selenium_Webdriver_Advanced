@@ -54,9 +54,9 @@ public class InputTests extends BaseClass
         String upd_field_num = updated_number_field.getAttribute("value");
         int upd_num = Integer.parseInt(upd_field_num);
 
+        // Verify that the number input is increased by one
         Assert.assertEquals(upd_num, (init_num + 1), "There was no change from the initial number!");
 
-        // Verify that the number input is increased by one
     }
 
     @Test
@@ -81,9 +81,9 @@ public class InputTests extends BaseClass
         String upd_field_num = updated_number_field.getAttribute("value");
         int upd_num = Integer.parseInt(upd_field_num);
 
+        // Verify that the number input is decreased by one
         Assert.assertEquals(upd_num, (init_num + 1), "There was no change from the initial number!");
 
-        // Verify that the number input is decreased by one
     }
 
 }
