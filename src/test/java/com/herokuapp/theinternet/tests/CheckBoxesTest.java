@@ -16,13 +16,13 @@ public class CheckBoxesTest extends BaseClass {
     @BeforeTest
     public void setUpTest() {
 
-        setUp("chrome", true);
+        setUp("chrome", false);
     }
 
-    @AfterTest
-    public void tearDownTest() {
-        driver.quit();
-    }
+//    @AfterTest
+//    public void tearDownTest() {
+//        driver.quit();
+//    }
 
     @Test
     public void toggleCheckboxes() {
