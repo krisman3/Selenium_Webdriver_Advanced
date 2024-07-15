@@ -31,7 +31,7 @@ public class CheckBoxesTest extends BaseClass {
         String curr_url = driver.getCurrentUrl();
 
         // Double-checking if the page we opened is the correct one:
-        Assert.assertEquals(curr_url, "https://the-internet.herokuapp.com/checkboxes", "Incorrect URL!");
+        Assert.assertEquals(curr_url, PagesNames.CHECKBOX_PAGE, "Incorrect URL!");
         WebElement boxes = driver.findElement(By.id("checkboxes"));
         wait.until(ExpectedConditions.visibilityOf(boxes));
 
