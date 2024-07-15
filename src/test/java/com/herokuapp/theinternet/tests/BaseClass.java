@@ -41,8 +41,6 @@ public class BaseClass {
                     edgeOptions.addArguments("disable-gpu");
                 }
                 WebDriverManager.edgedriver().setup();
-//                options.addArguments("--headless=new");
-
                 driver = new EdgeDriver(edgeOptions);
                 break;
 
@@ -50,10 +48,10 @@ public class BaseClass {
                 System.out.println("Don't know how to start "+ browser + ", starting Chrome instead!");
                 WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver();
+                driver.manage().window().maximize();
                 break;
         }
 
-//        driver.manage().window().maximize();
         wait = new WebDriverWait(driver, Duration.ofSeconds(3));
     }
 
