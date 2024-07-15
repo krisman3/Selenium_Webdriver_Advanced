@@ -12,9 +12,8 @@ import java.util.List;
 
 public class CheckBoxesTest extends BaseClass {
 
-   @BeforeTest
-    public void setUpTest()
-    {
+    @BeforeTest
+    public void setUpTest() {
 
         setUp("chrome", true);
     }
@@ -25,24 +24,23 @@ public class CheckBoxesTest extends BaseClass {
     }
 
     @Test
-    public void toggleCheckboxes()
-    {
+    public void toggleCheckboxes() {
         // Go to page
         driver.get("https://the-internet.herokuapp.com/checkboxes");
         String curr_url = driver.getCurrentUrl();
+
+        // Double-checking if the page we opened is the correct one:
         Assert.assertEquals(curr_url, "https://the-internet.herokuapp.com/checkboxes", "Incorrect URL!");
         WebElement boxes = driver.findElement(By.id("checkboxes"));
         wait.until(ExpectedConditions.visibilityOf(boxes));
 
         List<WebElement> checked_boxes = driver.findElements(By.xpath("//input[@checked]"));
-        if(checked_boxes.size() != 1)
-        {
+        if (checked_boxes.size() != 1) {
             System.out.println("Only one box must be checked!");
         }
         System.out.println("Current number of checked boxes: " + checked_boxes.size());
 
         // Locate both checkboxes
-
         WebElement box1 = driver.findElement(By.xpath("//*[@id='checkboxes']/input[1]"));
         box1.click();
         Assert.assertTrue(box1.isSelected(), "The checkbox is not selected.");
