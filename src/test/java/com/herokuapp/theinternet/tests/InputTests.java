@@ -8,10 +8,12 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class InputTests extends BaseClass{
+public class InputTests extends BaseClass
+{
 
     @BeforeTest
-    public void setUpTest(){
+    public void setUpTest()
+    {
         setUp("chrome", false);
     }
 
@@ -22,7 +24,8 @@ public class InputTests extends BaseClass{
 
 
     @Test
-    public void inputTestUp(){
+    public void inputTestUp()
+    {
 
         // Grab the page
         driver.get(PagesNames.INPUTS_PAGE);
@@ -43,7 +46,7 @@ public class InputTests extends BaseClass{
         int init_num = Integer.parseInt(number_field_num);
 
         // Exec. the script here:
-        js.executeScript("arguments[0].stepUp();" , number_field);
+        js.executeScript("arguments[0].stepUp();", number_field);
         js.executeScript("arguments[0].dispatchEvent(new Event('change'));", number_field);
 
 
@@ -51,15 +54,30 @@ public class InputTests extends BaseClass{
         String upd_field_num = updated_number_field.getAttribute("value");
         int upd_num = Integer.parseInt(upd_field_num);
 
-        Assert.assertEquals(upd_num,(init_num + 1), "There was no change from the initial number!");
+        Assert.assertEquals(upd_num, (init_num + 1), "There was no change from the initial number!");
 
         // Verify that the number input is increased by one
     }
 
+    @Test
+    public void inputTestDown()
+    {
 
-    // Find the button DOWN
+        driver.get(PagesNames.INPUTS_PAGE);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
 
-    // Click it
+        // Find the button DOWN (it's not an actual button, so we'll use a script
+        WebElement number_field = driver.findElement(By.cssSelector("div > input[type='number']"));
+        String number_field_num = number_field.getAttribute("value");
 
-    // Verify that the number input is decreased by one
+        int init_num = Integer.parseInt(number_field_num);
+        js.executeScript("arguments[0].stepDown();",number_field);
+        js.executeScript("arguments[0].dispatchEvent(new Event('change'));",number_field);
+
+        WebElement input_field = driver.findElement(By.cssSelector("div > input[type='number']"));
+        input_field.click();
+
+        // Verify that the number input is decreased by one
+    }
+
 }
