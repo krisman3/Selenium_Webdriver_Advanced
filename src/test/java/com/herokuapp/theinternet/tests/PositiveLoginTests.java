@@ -15,9 +15,7 @@ public class PositiveLoginTests extends BaseClass {
 
     @Parameters({"browser"})
     @BeforeTest
-    public void setUpTest(String browser)
-    {
-
+    public void setUpTest(String browser) {
         setUp(browser, true);
     }
 
@@ -26,7 +24,6 @@ public class PositiveLoginTests extends BaseClass {
         tearDown();
     }
 
-
     @Test
     public void loginTest() {
         System.out.println("Test started!");
@@ -34,13 +31,10 @@ public class PositiveLoginTests extends BaseClass {
         String BASE_URL = "https://the-internet.herokuapp.com/login";
         String EXP_URL = "https://the-internet.herokuapp.com/secure";
 
-
         PageFactory.initElements(driver, this);
 
         // Open test page
         driver.get(BASE_URL);
-
-//        driver.manage().window().maximize();
 
         // Enter username
         WebElement username = driver.findElement(By.id("username"));
@@ -48,13 +42,11 @@ public class PositiveLoginTests extends BaseClass {
         username.click();
         username.sendKeys("tomsmith");
 
-
         // Enter password
         WebElement password = driver.findElement(By.id("password"));
         wait.until(ExpectedConditions.elementToBeClickable(password));
         password.click();
         password.sendKeys("SuperSecretPassword!");
-
 
         // Click Login button
         WebElement login_button = driver.findElement(By.cssSelector("#login > button > i"));
@@ -65,7 +57,6 @@ public class PositiveLoginTests extends BaseClass {
 
         String act_url = driver.getCurrentUrl();
         Assert.assertEquals(act_url, EXP_URL, "The URLs don't match!");
-
 
         // Check for the green message!
         WebElement logged_message = driver.findElement(By.cssSelector("#flash"));
@@ -84,11 +75,5 @@ public class PositiveLoginTests extends BaseClass {
         } catch (TimeoutException e) {
             System.out.println(e);
         }
-
-
-        // Finish
-        driver.manage().window().minimize();
-        driver.close();
     }
-
 }
