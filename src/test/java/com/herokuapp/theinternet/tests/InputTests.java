@@ -40,7 +40,6 @@ public class InputTests extends BaseClass {
         // The getAttribute("value") method was used as there was an IMPLICITLY existing value field within the <input> element.
 
         String number_field_num = input_field.getAttribute("value");
-        System.out.println("The number is: " + number_field_num);
         int init_num = Integer.parseInt(number_field_num);
 
         // Exec. the script here:
