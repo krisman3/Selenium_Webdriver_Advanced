@@ -32,9 +32,12 @@ public class CheckBoxesTest extends BaseClass {
 
         // Double-checking if the page we opened is the correct one:
         Assert.assertEquals(curr_url, PagesNames.CHECKBOX_PAGE, "Incorrect URL!");
+
+        // Finding the form "checkboxes" as an element (if it's present)
         WebElement boxes = driver.findElement(By.id("checkboxes"));
         wait.until(ExpectedConditions.visibilityOf(boxes));
 
+        // Confirming that there's only one checked box upon opening the page:
         List<WebElement> checked_boxes = driver.findElements(By.xpath("//input[@checked]"));
         Assert.assertEquals(checked_boxes.size(), 1, "Only one box must be checked!");
 
@@ -44,6 +47,9 @@ public class CheckBoxesTest extends BaseClass {
         Assert.assertTrue(box1.isSelected(), "The checkbox is not selected.");
 
         // Click on checkbox 1
+        WebElement box2 = driver.findElement(By.xpath("//*[@id='checkboxes']/input[2]"));
+        box2.click();
+        Assert.assertFalse(box2.isSelected(), "The checkbox is still selected.");
 
         // Click on checkbox 2
     }
