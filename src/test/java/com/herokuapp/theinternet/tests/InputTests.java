@@ -77,6 +77,12 @@ public class InputTests extends BaseClass
         WebElement input_field = driver.findElement(By.cssSelector("div > input[type='number']"));
         input_field.click();
 
+        WebElement updated_number_field = driver.findElement(By.xpath("//div[@class='example']/input[@type='number']"));
+        String upd_field_num = updated_number_field.getAttribute("value");
+        int upd_num = Integer.parseInt(upd_field_num);
+
+        Assert.assertEquals(upd_num, (init_num + 1), "There was no change from the initial number!");
+
         // Verify that the number input is decreased by one
     }
 
