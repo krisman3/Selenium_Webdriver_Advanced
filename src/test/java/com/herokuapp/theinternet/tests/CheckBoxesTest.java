@@ -36,10 +36,7 @@ public class CheckBoxesTest extends BaseClass {
         wait.until(ExpectedConditions.visibilityOf(boxes));
 
         List<WebElement> checked_boxes = driver.findElements(By.xpath("//input[@checked]"));
-        Assert.assertEquals(checked_boxes.size(),1, "Only one box must be checked!");
-//        if (checked_boxes.size() != 1) {
-//            System.out.println("Only one box must be checked!");
-//        }
+        Assert.assertEquals(checked_boxes.size(), 1, "Only one box must be checked!");
 
         // Locate both checkboxes
         WebElement box1 = driver.findElement(By.xpath("//*[@id='checkboxes']/input[1]"));
