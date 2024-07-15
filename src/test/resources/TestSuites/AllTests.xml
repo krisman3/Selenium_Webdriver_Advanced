@@ -9,7 +9,11 @@
             <class name="com.herokuapp.theinternet.tests.PositiveTests"/>
         </classes>
     </test>
-
+    <test name="InputsTest" enabled="false">
+        <classes>
+            <class name="com.herokuapp.theinternet.tests.InputsTestNOTWORKING"/>
+        </classes>
+    </test>
     <test name="NegativeTests">
         <parameter name="browser" value="edge" />
         <parameter name="headless" value="true" />
