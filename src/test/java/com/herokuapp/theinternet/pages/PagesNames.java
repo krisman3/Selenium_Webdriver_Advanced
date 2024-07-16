@@ -7,4 +7,5 @@ public class PagesNames  {
     public static final String INPUTS_PAGE = BASE_PAGE + "inputs";
     public static final String HOVER_PAGE = BASE_PAGE + "hover";
     public static final String CHECKBOX_PAGE = BASE_PAGE + "checkboxes";
+    public static final String INF_SCROLL = BASE_PAGE + "infinite_scroll";
 }
