@@ -41,7 +41,14 @@ public class InfiniteScrollTest extends BaseClass{
         List<WebElement> initParagraphs = driver.findElements(By.cssSelector(".jscroll-inner > .jscroll-added"));
         Assert.assertEquals(initParagraphs.size(), 2, "Incorrect number of paragraphs loaded upon start!");
 
+        // Scroll down and assert that a new paragraph popped up
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,250)", "");
 
+        // The paragraph may load a bit slowly - this is why I am putting a wait here:
+        wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.cssSelector(".jscroll-inner > .jscroll-added"), 1));
+        List<WebElement> upd1_Paragraphs = driver.findElements(By.cssSelector(".jscroll-inner > .jscroll-added"));
+        Assert.assertEquals(initParagraphs.size(), 3, "Incorrect number of paragraphs after 1st scroll!");
 
         // Scroll down again and assert that new paragraphs keep coming
     }
